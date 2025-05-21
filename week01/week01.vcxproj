@@ -110,6 +110,9 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);$(SolutionDir)DirectXTK\debug_lib\DirectXTK.lib;$(SolutionDir)DirectXTex\debug_lib\DirectXTex.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,9 +129,38 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)$(SolutionDir)DirectXTK\release_lib\DirectXTK.lib;$(SolutionDir)DirectXTex\release_lib\DirectXTex.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\DirectXTex\include\BC.h" />
+    <ClInclude Include="..\DirectXTex\include\BCDirectCompute.h" />
+    <ClInclude Include="..\DirectXTex\include\DDS.h" />
+    <ClInclude Include="..\DirectXTex\include\DirectXTex.h" />
+    <ClInclude Include="..\DirectXTex\include\DirectXTexP.h" />
+    <ClInclude Include="..\DirectXTex\include\filters.h" />
+    <ClInclude Include="..\DirectXTex\include\scoped.h" />
+    <ClInclude Include="..\DirectXTK\include\Audio.h" />
+    <ClInclude Include="..\DirectXTK\include\BufferHelpers.h" />
+    <ClInclude Include="..\DirectXTK\include\CommonStates.h" />
+    <ClInclude Include="..\DirectXTK\include\DDSTextureLoader.h" />
+    <ClInclude Include="..\DirectXTK\include\DirectXHelpers.h" />
+    <ClInclude Include="..\DirectXTK\include\Effects.h" />
+    <ClInclude Include="..\DirectXTK\include\GamePad.h" />
+    <ClInclude Include="..\DirectXTK\include\GeometricPrimitive.h" />
+    <ClInclude Include="..\DirectXTK\include\GraphicsMemory.h" />
+    <ClInclude Include="..\DirectXTK\include\Keyboard.h" />
+    <ClInclude Include="..\DirectXTK\include\Model.h" />
+    <ClInclude Include="..\DirectXTK\include\Mouse.h" />
+    <ClInclude Include="..\DirectXTK\include\PostProcess.h" />
+    <ClInclude Include="..\DirectXTK\include\PrimitiveBatch.h" />
+    <ClInclude Include="..\DirectXTK\include\ScreenGrab.h" />
+    <ClInclude Include="..\DirectXTK\include\SimpleMath.h" />
+    <ClInclude Include="..\DirectXTK\include\SpriteBatch.h" />
+    <ClInclude Include="..\DirectXTK\include\SpriteFont.h" />
+    <ClInclude Include="..\DirectXTK\include\VertexTypes.h" />
+    <ClInclude Include="..\DirectXTK\include\WICTextureLoader.h" />
+    <ClInclude Include="..\DirectXTK\include\XboxDDSTextureLoader.h" />
     <ClInclude Include="DxUtil\D3DManager.h" />
     <ClInclude Include="DxUtil\D3DShader.h" />
     <ClInclude Include="DxUtil\DxUtilCommon.h" />
@@ -155,6 +187,16 @@
     <FxCompile Include="DxUtil\SpriteShader.hlsl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\DirectXTex\include\DirectXTex.inl" />
+    <None Include="..\DirectXTK\include\SimpleMath.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\DirectXTex\debug_lib\DirectXTex.lib" />
+    <Library Include="..\DirectXTex\release_lib\DirectXTex.lib" />
+    <Library Include="..\DirectXTK\debug_lib\DirectXTK.lib" />
+    <Library Include="..\DirectXTK\release_lib\DirectXTK.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

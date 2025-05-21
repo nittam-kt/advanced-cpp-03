@@ -16,6 +16,30 @@
     <Filter Include="DxUtil">
       <UniqueIdentifier>{a0567210-7052-4f4a-b07e-a0cd5742888c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DirextXTK">
+      <UniqueIdentifier>{806eea5d-af2c-4c92-8542-f663696d746e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectXTex">
+      <UniqueIdentifier>{4024b56f-8ea1-41fa-9e4a-1b7546a6d8d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirextXTK\include">
+      <UniqueIdentifier>{a1aa5308-7c9b-4a32-8b80-46155098a0ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectXTex\include">
+      <UniqueIdentifier>{fb09b909-ea56-453c-b51b-4add5169b0fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectXTex\debug_lib">
+      <UniqueIdentifier>{205f5718-2da3-4127-9724-b429d35447f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectXTex\Release">
+      <UniqueIdentifier>{b5d3d416-3da5-40db-b168-59ab58bff1cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirextXTK\debug_lib">
+      <UniqueIdentifier>{4d38a673-3564-466b-8f02-31ff1fe8bf50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirextXTK\release_lib">
+      <UniqueIdentifier>{73c0d651-01cb-4bd0-940c-19438e5793b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -41,6 +65,90 @@
     </ClInclude>
     <ClInclude Include="DxUtil\KeyInput.h">
       <Filter>DxUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\Audio.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\BufferHelpers.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\CommonStates.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\DDSTextureLoader.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\DirectXHelpers.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\Effects.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\GamePad.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\GeometricPrimitive.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\GraphicsMemory.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\Keyboard.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\Model.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\Mouse.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\PostProcess.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\PrimitiveBatch.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\ScreenGrab.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\SimpleMath.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\SpriteBatch.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\SpriteFont.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\VertexTypes.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\WICTextureLoader.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTK\include\XboxDDSTextureLoader.h">
+      <Filter>DirextXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTex\include\BC.h">
+      <Filter>DirectXTex\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTex\include\BCDirectCompute.h">
+      <Filter>DirectXTex\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTex\include\DDS.h">
+      <Filter>DirectXTex\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTex\include\DirectXTex.h">
+      <Filter>DirectXTex\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTex\include\DirectXTexP.h">
+      <Filter>DirectXTex\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTex\include\filters.h">
+      <Filter>DirectXTex\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DirectXTex\include\scoped.h">
+      <Filter>DirectXTex\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,5 +182,27 @@
     <FxCompile Include="DxUtil\SpriteShader.hlsl">
       <Filter>DxUtil</Filter>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\DirectXTK\include\SimpleMath.inl">
+      <Filter>DirextXTK\include</Filter>
+    </None>
+    <None Include="..\DirectXTex\include\DirectXTex.inl">
+      <Filter>DirectXTex\include</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\DirectXTK\release_lib\DirectXTK.lib">
+      <Filter>DirextXTK\release_lib</Filter>
+    </Library>
+    <Library Include="..\DirectXTK\debug_lib\DirectXTK.lib">
+      <Filter>DirextXTK\debug_lib</Filter>
+    </Library>
+    <Library Include="..\DirectXTex\debug_lib\DirectXTex.lib">
+      <Filter>DirectXTex\debug_lib</Filter>
+    </Library>
+    <Library Include="..\DirectXTex\release_lib\DirectXTex.lib">
+      <Filter>DirectXTex\Release</Filter>
+    </Library>
   </ItemGroup>
 </Project>
