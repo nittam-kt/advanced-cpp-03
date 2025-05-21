@@ -4,7 +4,17 @@
 #include "framework.h"
 #include "main.h"
 
+#include <Keyboard.h>          // DirectXTK
+#include <SimpleMath.h>        // DirectXTK 便利数学ユーティリティ
+using namespace DirectX;
+using namespace DirectX::SimpleMath;
+
+// DirectXテクスチャライブラリを使用できるようにする
+#include <DirectXTex.h>
+
 #include "DxUtil/D3DManager.h"
+#include "DxUtil/D3DShader.h"
+#include "DxUtil/DxUtilCommon.h"
 
 #define MAX_LOADSTRING 100
 
@@ -12,6 +22,11 @@
 HINSTANCE hInst;                                // 現在のインターフェイス
 WCHAR szTitle[MAX_LOADSTRING];                  // タイトル バーのテキスト
 WCHAR szWindowClass[MAX_LOADSTRING];            // メイン ウィンドウ クラス名
+
+// -----------------------------------------------------------------------------
+// 3. デバイス関連（初期化時に作っておく）
+// -----------------------------------------------------------------------------
+std::unique_ptr<Keyboard> g_keyboard;   // DirectXTK Keyboard
 
 // このコード モジュールに含まれる関数の宣言を転送します:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -131,7 +146,10 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    // Direct3D初期化
    D3DManager::GetInstance().Initialize(hWnd, 1280, 720);
-   
+
+   // キー入力の初期化
+   g_keyboard = std::make_unique<Keyboard>();
+
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
@@ -179,6 +197,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     case WM_DESTROY:
         PostQuitMessage(0);
+        break;
+    case WM_ACTIVATE:
+    case WM_ACTIVATEAPP:
+        Keyboard::ProcessMessage(message, wParam, lParam);
+        break;
+    case WM_SYSKEYDOWN:
+        if (wParam == VK_RETURN && (lParam & 0x60000000) == 0x20000000)
+        {
+            // This is where you'd implement the classic ALT+ENTER hotkey for fullscreen toggle
+        }
+        Keyboard::ProcessMessage(message, wParam, lParam);
+        break;
+
+    case WM_KEYDOWN:
+    case WM_KEYUP:
+    case WM_SYSKEYUP:
+        Keyboard::ProcessMessage(message, wParam, lParam);
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);

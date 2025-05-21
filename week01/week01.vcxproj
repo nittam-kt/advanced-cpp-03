@@ -106,6 +106,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTK\include;$(SolutionDir)DirectXTex\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -164,7 +165,6 @@
     <ClInclude Include="DxUtil\D3DManager.h" />
     <ClInclude Include="DxUtil\D3DShader.h" />
     <ClInclude Include="DxUtil\DxUtilCommon.h" />
-    <ClInclude Include="DxUtil\KeyInput.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -173,7 +173,6 @@
   <ItemGroup>
     <ClCompile Include="DxUtil\D3DManager.cpp" />
     <ClCompile Include="DxUtil\D3DShader.cpp" />
-    <ClCompile Include="DxUtil\KeyInput.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +183,9 @@
     <Image Include="week01.ico" />
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="DxUtil\SimplePositionShader.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </FxCompile>
     <FxCompile Include="DxUtil\SpriteShader.hlsl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </FxCompile>
